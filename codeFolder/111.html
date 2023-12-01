@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- html 파일의 인코딩을 알려주는 태그 -->
+    <title>Team 300</title>
+    <!-- 제이쿼리사용하겠다! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=East+Sea+Dokdo&display=swap');
+        /*폰트 임포트 하기*/
+
+        * {
+            font-family: 'East Sea Dokdo', serif;
+            /*폰트를 결정*/
+            font-size: 30px;
+            /*폰트 크기를 결정*/
+        }
+
+        body {
+            background-color: black;
+            /*전체 배경을 black으로 설정*/
+            white-space: nowrap;
+            /*텍스트 줄바꿈이 일어나지 않음*/
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            /*텍스트 정렬방식*/
+            height: 100vh;
+            padding: 30px 0 0 0;
+        }
+
+        .member {
+            flex: 0 0 calc(20% - 20px);
+            /* 4개의 아이템을 가로로 배치 */
+            border-radius: 100px;
+            box-shadow: 0 4px 6px (0, 0, 0, 0.1);
+            /*박스에 그림자 효과주기*/
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .member>img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .member_img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .member_img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .member:hover {
+            transform: scale(1.1);
+        }
+
+        section {
+            text-align: center;
+            display: flex;
+            /*화면에 어떻게 배열할지 결정*/
+            justify-content: center;
+            /* 콘텐츠 항목 사이와 주위에 공간을 분배하는 방법을 정의하고 center는 아이템들을 가운데로 정렬한다.*/
+            flex-wrap: wrap;
+            /*요소들의 총 넓이가 부모 넓이보다 클 때, 이 요소들을 다음 줄에 이어서 나열 해주는 기능*/
+            margin: 50px auto 50px auto;
+        }
+
+
+
+        .member>img {
+            object-fit: cover;
+        }
+
+        #logo {
+            height: 150px;
+        }
+
+        #poster {
+            width: 400px;
+            height: 600px;
+            margin: 100px 30px 0 0;
+        }
+
+        #team_intro {
+            display: inline-flex;
+        }
+
+        #team_detail>h1 {
+            color: red;
+        }
+
+        footer {
+            background-color: rgba(255, 0, 0, 0.562);
+            color: black;
+            text-align: center;
+            width: 100%;
+            height: 25px;
+            /* footer의 높이 */
+            margin-top: 0;
+            padding-bottom: 30px;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #guestbook {
+            background-color: rgba(255, 0, 0, 0.562);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 50px;
+            margin: 0 auto 55px auto;
+        }
+
+        #guestbook_button {
+            background-color: black;
+            box-shadow: 10px;
+            color: rgba(255, 0, 0, 0.562);
+            ;
+        }
+
+        .guestbook-entries {
+            color: white;
+            line-height: 30%;
+        }
+
+        h2 {
+            font-size: 60px;
+            line-height: 10%;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* 이미지를 숨기기 위한 CSS */
+        #imageButton {
+            width: 200px;
+            /* 이미지 크기에 맞게 조정 */
+            height: 50px;
+            /* 이미지 크기에 맞게 조정 */
+            background-color: red;
+            cursor: pointer;
+            border: 2px solid rgb(243, 1, 1);
+
+
+            /* 이미지를 적절하게 화면에 맞게 조정 */
+
+        }
+        #center-gap {
+            position:absolute;
+            top:1000px;
+            width:100%;
+            height:50px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #backgroundImage {
+            flex: 1;
+            height: 100vh;
+            color: white;
+            background-image: url(https://velog.velcdn.com/images/varjm/post/122f1718-0a87-4a53-ba8e-bb73b81b8fdb/image.png);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            position:static;
+            margin-top:120px;
+            margin-bottom:-300px;
+        }
+
+        #scrollbottom {
+            padding: 250px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id="logo"
+                src="https://velog.velcdn.com/images/varjm/post/d8e850e7-3b53-47c8-b107-1dd6590154fa/image.png">
+        </div>
+        <div id="team_intro">
+            <img id="poster"
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MjdfNzkg%2FMDAxNjgyNTgxNjAzNjUx.HKLwaOG6HZmoAMQeT9H3mu711mhpZSRyFaH4EgtnGf8g.3WhRRC0D1MmynlOpHOjh8ph6h7cWYqv-Kttz4D9APWYg.PNG.aisop%2Fimage.png&type=sc960_832">
+
+            <div id="team_detail">
+                <h1>팀 소개</h1>
+                안녕하세요 A반 6조 팀300 입니다.&#x1F603<br>
+                여러분은 영화 300하면 떠오르는 이미지가 있으신가요?<br>
+                네 맞습니다. 피튀기며 전사들이 싸우는 모습이 생각이 납니다.<br>
+                그래서 저희도 1인당 300인분 하겠다! &#x1F525는 마음으로<br>
+                몸과 마음을 가다듬고 전장터에 무기를 들고 임하듯이 <br>
+                끝까지 힘내겠다는 마음에서 이렇게 팀 명을 지어보았습니다.<br>
+
+                <h1>우리 팀의 목표</h1>
+                포기하지않고 성실히 임해서 수료후에도 팀에 도움이 되는 개발자가 되자!!
+
+                <h1>우리 팀의 특징</h1>
+                아깎돌
+                아직 깎지 않은 돌덩이로 다듬을수록 빛이나는 보석들 입니다.&#x1F48E
+
+                <h1>우리 팀의 약속</h1>
+                <div>
+                    - 지각하지말자<br>
+                    - 적극적으로 참여하자<br>
+                    - 구체적으로 찾아보기<br>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <div id="center-gap">
+        <button id="imageButton" type="button" class="btn btn-danger" onclick="toggleBackground()">코딩을 정복하리라</button>
+    </div>
+
+    <div id="backgroundImage"></div>
+
+    <script>
+        var background = document.getElementById('backgroundImage');
+        closeBackground(); // 페이지가 열리면서 백그라운드 이미지를 닫기
+
+        // 백그라운드 이미지를 닫는 함수
+        function closeBackground() {
+            background.style.display = 'none';
+        }
+
+        // 백그라운드 이미지를 토글하는 함수
+        function toggleBackground() {
+            if (background.style.display === 'none') {
+                background.style.display = 'block'; // 백그라운드 이미지를 보이게 함
+            } else {
+                background.style.display = 'none'; // 백그라운드 이미지를 숨김
+            }
+        }
+    </script>
+
+
+
+
+
+    <section id="scrollbottom">
+        <div id="member1" class="member">
+            <a href="https://jeongminhan23.github.io/team300/selfIntroduction">
+                <div class="image-container" id="image2"
+                    onmouseover="changeImage(this, 'https://velog.velcdn.com/images/kkw0426/post/907412aa-db67-4e2e-a7b6-386d8f2d23b0/image.jpg')"
+                    onmouseout="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/a843537b-03a6-412d-b5c4-b3f4715685a9/image.jpg')">
+                    <img class="member_img"
+                        src="https://velog.velcdn.com/images/varjm/post/a843537b-03a6-412d-b5c4-b3f4715685a9/image.jpg"
+                        alt="Image 2" width="200" height="150">
+                </div>
+            </a>
+            <h2>김건우</h2>
+            <p>INTP</p>
+        </div>
+
+
+
+        <div id="member2" class="member">
+            <a href="https://jeongminhan23.github.io/team300/잡동">
+                <div class="image-container" id="image1"
+                    onmouseover="changeImage(this, 'https://postfiles.pstatic.net/MjAyMzExMjhfODgg/MDAxNzAxMTI4Mjk0MDg0.oqT15UaX9UpI8KC1cGgXiWVPX2Rur7x1vtu6qDt-MVMg.dWvFCho5tb2EvgZEl8lyhiRWxlPvV1-D4sMFpGHyQkog.PNG.abczza/image.png?type=w773')"
+                    onmouseout="changeImage(this, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU')">
+                    <img class="member_img"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU"
+                        alt="Image 1" width="200" height="150">
+                </div>
+
+            </a>
+            <h2>김찬모</h2>
+            <p>ENTP</p>
+        </div>
+
+
+
+
+
+        <div id="member3" class="member">
+            <a href="https://jeongminhan23.github.io/team300/hjm">
+                <div class="image-container" id="image3"
+                    onmouseover="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/31b4e323-5f40-43be-84e6-7afaed62f928/image.jpg')"
+                    onmouseout="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/8e99a859-063a-4ae2-ab71-5ed7a405d630/image.png')">
+                    <img class="member_img"
+                        src="https://velog.velcdn.com/images/varjm/post/8e99a859-063a-4ae2-ab71-5ed7a405d630/image.png"
+                        alt="Image 3" width="200" height="150">
+                </div>
+            </a>
+            <h2>한정민</h2>
+            <p>ISTP</p>
+        </div>
+
+
+
+
+
+
+        <div id="member4" class="member">
+            <a href="https://jeongminhan23.github.io/team300/kmj">
+                <div class="image-container" id="image4"
+                    onmouseover="changeImage(this, 'https://velog.velcdn.com/images/codekmj/post/03e074aa-f555-48bd-85ea-e2c33d8013a5/image.png')"
+                    onmouseout="changeImage(this, 'https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg')">
+                    <img class="member_img" src="https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg"
+                        alt="Image 4" width="200" height="150">
+                </div>
+            </a>
+            <h2>김민주</h2>
+            <p>ISTP</p>
+        </div>
+
+
+
+        <script>
+            function changeImage(element, newImagePath) {
+                const image = element.getElementsByTagName('img')[0];
+                const currentImagePath = image.getAttribute('src');
+
+                if (currentImagePath === newImagePath) {
+                    image.src = currentImagePath.replace('Original', 'New');
+                } else {
+                    image.src = newImagePath;
+                }
+            }
+        </script>
+    </section>
+    <footer>
+        <h2 style="font-size: 20px; display: inline-flex;">Copyright © 2023 우리는 일당 300!! 코딩을 뿌수러 왔다!!</h2>
+        <a style="display:scroll;position:fixed;bottom:20px;right:3px;" rel="nofollow" href="#" title="Back to Top"
+            style="font-size:2.0em">위로↑</a>
+        <br />
+        <a style="display:scroll;position:fixed;bottom:0px;right:3px;" rel="nofollow" href="#scrollbottom"
+            title="Go to Bottom" style="font-size:2.0em">아래로↓</a>
+    </footer>
+
+
+    <section id="guestbook">
+        <h1 style="color:black">&#x1F4E3팀300에게 응원 한마디&#x1F4E3</h1>
+        <form id="guestbook-form" style="margin-bottom: 30px;">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required placeholder="방문자이름">
+
+            <label for="message"></label>
+            <input id="message" name="message" rows="1" required placeholder="메시지"></input>
+
+            <button type="button" class="btn btn-dark" onclick="addGuestbookEntry()" id="guestbook_button">방명록
+                남기기</button>
+        </form>
+
+        <div id="guestbook-entries">
+            <!-- 작성한 방명록이 표시되는 공간 -->
+        </div>
+    </section>
+
+
+
+
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9V7dUdyYq66J-zsP0b9F5mxyPS38b894",
+            authDomain: "sparta-a7f45.firebaseapp.com",
+            projectId: "sparta-a7f45",
+            storageBucket: "sparta-a7f45.appspot.com",
+            messagingSenderId: "642799696143",
+            appId: "1:642799696143:web:3c30f459924e64f7e2667a",
+            measurementId: "G-4MZ01WJNH4"
+        };
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+
+
+        // 파이어베이스에 방명록 내용을 저장하기
+        // 웹 페이지에서 방명록이나 메시지를 작성하고, 그 정보를 Firestore 데이터베이스에 저장한 후에 페이지를 새로고침하여 업데이트하는 동작을 수행
+        $("#guestbook_button").click(async function () {  //guestbook_button이라는 ID가 클릭이 되었을 때, async function()함수가 실행시킨다.
+            let name = $('#name').val(); // 입력한name값을 변수 name에 저장한다
+            let message = $('#message').val(); // 입력한message값을 변수 message에 저장한다
+            let doc = {
+                'name': name,
+                'message': message
+            }; // 입력된 이름과 메시지를 포함하는 JavaScript 객체를 생성
+            await addDoc(collection(db, "visiter"), doc);  //Firestore 데이터베이스에 visiter라는 새로운 문서를 추가한다.
+            alert('감사합니다!♡') // 작업이 성공적으로 완료시 알림창 표시
+            window.location.reload(); // 페이지를 새로고침한다. 이는 방명록이나 메시지가 성공적으로 추가되면 새로운 내용이 표시되도록 페이지를 다시 로드하는 것
+        })
+        // 따라서, 이 코드는 웹 페이지에서 방명록이나 메시지를 작성하고, 그 정보를 Firestore 데이터베이스에 저장한 후에 페이지를 새로고침하여 업데이트하는 동작을 수행합니다.
+
+
+
+
+        //파이어베이스에 저장된 내용을 불러오기
+        let docs = await getDocs(collection(db, "visiter")); //Firestore 데이터베이스의 "visiter" 컬렉션에서 모든 문서들을 가져옵니다. 이때 getDocs 함수는 비동기 함수이므로 await 키워드를 사용하여 해당 작업이 완료될 때까지 기다립니다.
+        docs.forEach((doc) => { // 가져온 문서들을 반복(iterate)하면서 각 문서에 대해 주어진 함수를 실행합니다.
+            let row = doc.data(); // 현재 반복 중인 문서의 데이터를 row 변수에 저장합니다. Firestore에서 각 문서는 데이터와 함께 여러 다른 속성을 가지며, .data() 메서드를 사용하여 실제 데이터에 접근할 수 있습니다.
+            let name = row['name'];
+            let message = row['message']; // 현재 문서에서 "name"과 "message" 필드의 값을 가져와서 각각 name과 message 변수에 저장합니다.
+            let temp_html = `
+            <div class="col">
+                    <div class="guestbook-entries">
+                        <p class="card-text">${name} : ${message}</p>
+                    </div>
+             </div>`;
+
+            $('#guestbook-form').append(temp_html);  //생성된 HTML 코드를 "guestbook-form"이라는 ID를 가진 HTML 요소에 추가합니다. 이는 페이지에 동적으로 방명록 엔트리를 추가하는 역할을 합니다.
+        });
+        // 따라서, 해당 코드들은 Firestore에서 가져온 방명록 문서들을 이용하여 동적으로 HTML을 생성하고, 해당 HTML을 페이지에 추가하여 방명록을 표시하는 역할을 합니다.
+
+
+
+
+        function addGuestbookEntry() {
+            // 이 함수를 통해 방명록에 새 항목을 추가할수 있다
+            let nameInput = document.getElementById('name');
+            let messageInput = document.getElementById('message');
+
+            let name = nameInput.value;
+            let message = messageInput.value;
+
+            // 방명록에 새로운 항목 추가하기
+            let guestbookEntries = document.getElementById('guestbook-entries');
+            let entryDiv = document.createElement('div');
+            entryDiv.innerHTML = '<strong>' + name + ':</strong> ' + message;
+            guestbookEntries.appendChild(entryDiv);
+
+            // 입력 필드 초기화
+            nameInput.value = '';
+            messageInput.value = '';
+        }
+    </script>
+
+    <!-- Fetch 현재기온을 보여줄 곳을 설정 -->
+    <p style="position:fixed;bottom:-20px;left:10px;"><span id="temp"></span>°C</p>
+
+    <!-- Fetch 가져오기 -->
+    <script>
+        let fetchurl = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=ef0880109f0aac6e211fd24fdd9726b9";
+    
+        fetch(fetchurl)
+            .then(res => res.json())
+            .then(data => {
+                let temp_min = '최저 온도&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_min - 273.15);
+                let temp_max = '최고 온도&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_max - 273.15);
+    
+                $('#temp').html(temp_min +'  /  '+temp_max);
+    
+                console.log(data.main.temp);
+            })
+            .catch(error => console.log(error));
+    </script>
+</body>
+
+</html>

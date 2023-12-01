@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 300</title>
+    <!-- 제이쿼리사용하겠다! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=East+Sea+Dokdo&display=swap');
+        /*폰트 임포트 하기*/
+
+        * {
+            font-family: 'East Sea Dokdo', serif;
+            /*폰트를 결정*/
+            font-size: 30px;
+            /*폰트 크기를 결정*/
+        }
+
+        body {
+            background-color: black;
+            /*전체 배경을 black으로 설정*/
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+            white-space: nowrap;
+        }
+
+        #wrap {
+            min-width: 1340px;
+            display: block;
+        }
+
+        #logo {
+            width: 300px;
+        }
+
+        #header {
+            width: 300px;
+            margin: 0 auto;
+            position: static;
+            left: 570px;
+            /* z-index: -10;  내림차순으로 앞에 등장  */
+            overflow: hidden;
+
+        }
+
+        /*
+        #header_wrap {
+            width:1200px;
+            max-height:400px;
+        }
+        */
+
+        #section1 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 1000px;
+            justify-content: space-evenly;
+        }
+
+        #section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #section3 {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            margin-top: 40px;
+        }
+
+        #team_detail {
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #team_detail>h1 {
+            color: red;
+        }
+
+        #buttonDiv {
+            display: flex;
+            width: 100%;
+            height:200px;
+            justify-content: center;
+            align-items: center;;
+        }
+
+        #imageButton {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            background-image: url('https://velog.velcdn.com/images/kkw0426/post/4930374b-296e-4fd8-9eb0-949a707826a7/image.jpg');
+            position: static;
+        }
+
+        #backgroundImage {
+            flex: 1;
+            height: 100vh;
+            background-image: url('https://velog.velcdn.com/images/varjm/post/122f1718-0a87-4a53-ba8e-bb73b81b8fdb/image.png');
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 30px;
+        }
+
+        .member {
+            flex: 0 0 calc(20% - 20px);
+            /* 4개의 아이템을 가로로 배치 */
+            border-radius: 100px;
+            box-shadow: 0 4px 6px (0, 0, 0, 0.1);
+            /*박스에 그림자 효과주기*/
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .member_img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .member:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <img id="logo"
+                src="https://velog.velcdn.com/images/varjm/post/d8e850e7-3b53-47c8-b107-1dd6590154fa/image.png">
+        </div>
+        <div id="section1">
+            <div id="image300">
+                <img
+                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MjdfNzkg%2FMDAxNjgyNTgxNjAzNjUx.HKLwaOG6HZmoAMQeT9H3mu711mhpZSRyFaH4EgtnGf8g.3WhRRC0D1MmynlOpHOjh8ph6h7cWYqv-Kttz4D9APWYg.PNG.aisop%2Fimage.png&type=sc960_832">
+            </div>
+            <div id="team_detail">
+                <h1>팀 소개</h1>
+                안녕하세요 A반 6조 팀300 입니다.&#x1F603<br>
+                여러분은 영화 300하면 떠오르는 이미지가 있으신가요?<br>
+                네 맞습니다. 피튀기며 전사들이 싸우는 모습이 생각이 납니다.<br>
+                그래서 저희도 1인당 300인분 하겠다! &#x1F525는 마음으로<br>
+                몸과 마음을 가다듬고 전장터에 무기를 들고 임하듯이 <br>
+                끝까지 힘내겠다는 마음에서 이렇게 팀 명을 지어보았습니다.<br>
+
+                <h1>우리 팀의 목표</h1>
+                포기하지않고 성실히 임해서 수료후에도 팀에 도움이 되는 개발자가 되자!!
+
+                <h1>우리 팀의 특징</h1>
+                아직 드러나지 않았지만 알고보면 숨은 보석들의 모임&#x1F48E
+
+                <h1>우리 팀의 약속</h1>
+                <div>
+                    - 지각하지말자<br>
+                    - 적극적으로 참여하자<br>
+                    - 구체적으로 찾아보기<br>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <div id="buttonDiv">
+                <div id="imageButton" onclick="toggleBackground()"></div>
+            </div>
+            <div id="backgroundImage"></div>
+        </div>
+        <script>
+            var background = document.getElementById('backgroundImage');
+            closeBackground(); // 페이지가 열리면서 백그라운드 이미지를 닫기
+
+            // 백그라운드 이미지를 닫는 함수
+            function closeBackground() {
+                background.style.display = 'none';
+            }
+
+            // 백그라운드 이미지를 토글하는 함수
+            function toggleBackground() {
+                if (background.style.display === 'none') {
+                    background.style.display = 'block'; // 백그라운드 이미지를 보이게 함
+                } else {
+                    background.style.display = 'none'; // 백그라운드 이미지를 숨김
+                }
+            }
+        </script>
+        <script>
+            function changeImage(element, newImagePath) {
+                const image = element.getElementsByTagName('img')[0];
+                const currentImagePath = image.getAttribute('src');
+
+                if (currentImagePath === newImagePath) {
+                    image.src = currentImagePath.replace('Original', 'New');
+                } else {
+                    image.src = newImagePath;
+                }
+            }
+        </script>
+        <div id="section3">
+            <div id="member1" class="member">
+                <a href="https://jeongminhan23.github.io/team300/selfIntroduction">
+                    <div class="image-container" id="image2"
+                        onmouseover="changeImage(this, 'https://velog.velcdn.com/images/kkw0426/post/907412aa-db67-4e2e-a7b6-386d8f2d23b0/image.jpg')"
+                        onmouseout="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/a843537b-03a6-412d-b5c4-b3f4715685a9/image.jpg')">
+                        <img class="member_img"
+                            src="https://velog.velcdn.com/images/varjm/post/a843537b-03a6-412d-b5c4-b3f4715685a9/image.jpg"
+                            alt="Image 2" width="200" height="150">
+                    </div>
+                </a>
+                <h2>김건우</h2>
+                <p>INTP</p>
+            </div>
+
+
+
+            <div id="member2" class="member">
+                <a href="https://jeongminhan23.github.io/team300/잡동">
+                    <div class="image-container" id="image1"
+                        onmouseover="changeImage(this, 'https://postfiles.pstatic.net/MjAyMzExMjhfODgg/MDAxNzAxMTI4Mjk0MDg0.oqT15UaX9UpI8KC1cGgXiWVPX2Rur7x1vtu6qDt-MVMg.dWvFCho5tb2EvgZEl8lyhiRWxlPvV1-D4sMFpGHyQkog.PNG.abczza/image.png?type=w773')"
+                        onmouseout="changeImage(this, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU')">
+                        <img class="member_img"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU"
+                            alt="Image 1" width="200" height="150">
+                    </div>
+
+                </a>
+                <h2>김찬모</h2>
+                <p>ENTP</p>
+            </div>
+
+
+
+
+
+            <div id="member3" class="member">
+                <a href="https://jeongminhan23.github.io/team300/hjm">
+                    <div class="image-container" id="image3"
+                        onmouseover="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/31b4e323-5f40-43be-84e6-7afaed62f928/image.jpg')"
+                        onmouseout="changeImage(this, 'https://velog.velcdn.com/images/varjm/post/8e99a859-063a-4ae2-ab71-5ed7a405d630/image.png')">
+                        <img class="member_img"
+                            src="https://velog.velcdn.com/images/varjm/post/8e99a859-063a-4ae2-ab71-5ed7a405d630/image.png"
+                            alt="Image 3" width="200" height="150">
+                    </div>
+                </a>
+                <h2>한정민</h2>
+                <p>ISTP</p>
+            </div>
+
+
+
+
+
+
+            <div id="member4" class="member">
+                <a href="https://jeongminhan23.github.io/team300/kmj">
+                    <div class="image-container" id="image4"
+                        onmouseover="changeImage(this, 'https://velog.velcdn.com/images/codekmj/post/03e074aa-f555-48bd-85ea-e2c33d8013a5/image.png')"
+                        onmouseout="changeImage(this, 'https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg')">
+                        <img class="member_img"
+                            src="https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg" alt="Image 4"
+                            width="200" height="150">
+                    </div>
+                </a>
+                <h2>김민주</h2>
+                <p>ISTP</p>
+            </div>
+
+
+
+            <script>
+                function changeImage(element, newImagePath) {
+                    const image = element.getElementsByTagName('img')[0];
+                    const currentImagePath = image.getAttribute('src');
+
+                    if (currentImagePath === newImagePath) {
+                        image.src = currentImagePath.replace('Original', 'New');
+                    } else {
+                        image.src = newImagePath;
+                    }
+                }
+            </script>
+        </div>
+</body>
+
+</html>

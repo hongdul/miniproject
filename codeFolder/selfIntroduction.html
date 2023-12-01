@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Introduction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a0b3461e8.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Nanum Gothic Coding', monospace;
+    }
+
+    .container {
+        scroll-snap-type: y mandatory;
+        /* scroll-snap-align: center; */
+        overflow-y: scroll;
+        height: 100vh;
+        scroll-behavior: smooth;
+    }
+
+    .section {
+        min-width:1400px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        scroll-snap-align: center;
+    }
+    #section2 {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+    }
+    #section3 {
+        background-color:rgb(243, 235, 226);
+    }
+    #section4 {
+    }
+
+    footer {
+        width: 100%;
+        height: 8vh;
+        bottom: 2vh;
+        position: relative;
+    }
+
+    #foot {
+        color: rgb(100, 148, 148);
+        font-size: 3rem;
+    }
+
+
+
+    /*
+.section h1, .section h2 {
+    margin-bottom: 20px;
+}
+*/
+    .Hi {
+        font-size: 80px;
+        color:rgba(35, 40, 39, 0.958);
+    }
+
+    .imagecard {
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        background-position: center;
+        background-size: none;
+    }
+    
+
+    .dv-b {
+        height: 500px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+
+    #introduction_text {
+        color: rgb(44, 66, 57);
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    #introduction_text2 {
+        color: rgb(74, 136, 109);
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    #background_hover {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #background_hover:hover {
+        background-image: url("https://velog.velcdn.com/images/kkw0426/post/acba6a51-f2b5-4486-bce1-d6628b417a0b/image.png");  
+        object-fit: cover;   
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position:center;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <section id="section1" style="background-color:rgb(243, 235, 226);" class="section">
+            <section style="height:90vh; width:90vh; display:flex;" class="section">
+                
+                <h1 class="Hi" style="margin-bottom:40px;"><i class="fa-solid fa-child-reaching fa-2xl" style="color: #2767dd; margin-right:20px;"></i>반갑습니다!</h1>
+                
+            </section>
+
+
+        </section>
+
+        <section style="background-color:rgb(243, 235, 226)" class="section">
+            <header style="margin-top: 100px;">
+                <p id="foot">Introduction</p>
+            </header>
+            <section id="section2" style="height:90vh; width:100%" class="section">
+                <div 
+                    style=" width:12%; height:50vh; font-size: 20px; text-align:left; line-height:1.2em; margin-right: 0px;">
+                    <p id="introduction_text">이름</p>
+                    <p id="introduction_text">나이</p>
+                    <p id="introduction_text">사는 곳</p>
+                    <p id="introduction_text">MBTI</p>
+                    <p id="introduction_text">성격</p>
+                    <p id="introduction_text">협업 스타일</p>
+                    <p id="introduction_text">목표</p>
+                    <p id="introduction_text">나와의 약속</p>
+
+                </div>
+                <div
+                    style="width:28%; height:50vh; font-size: 20px; text-align:left; line-height:1.2em; margin-right: 50px;">
+                    <p id="introduction_text2">: 김건우 </p>
+                    <p id="introduction_text2">: 29살, 94년생 </p>
+                    <p id="introduction_text2">: 서울 </p>
+                    <p id="introduction_text2">: INTP </p>
+                    <p id="introduction_text2">: 즐거운 분위기 좋아함</p>
+                    <p id="introduction_text2">: 팀을 위해 배려하려고 노력</p>
+                    <p id="introduction_text2">: 탄탄하게 성장하는 개발자</p>
+                    <p id="introduction_text2">: 모르더라도 끝까지 해보자</p>
+
+                </div>
+                <div class="imagecard">
+                    <img src="https://velog.velcdn.com/images/kkw0426/post/b7e33fbc-1af8-485c-9ac7-a1d6eeddf3cb/image.jpeg"
+                        class="card-img-top" alt="...">
+                </div>
+
+            </section>
+
+        </section>
+
+        <section id="section3" style="width: 100%;" class="section">
+            <div id="background_hover">
+                
+                <p id="foot" style="color:rgb(71, 229, 229);"> Interests </p>
+
+            </div>
+
+        </section>
+
+        <section id="section4" style="background-color:white;" class="section">
+            <h1 style="font-size: 13vh; color:rgb(88, 230, 183); margin-bottom:70px;">Contact</h1>
+            <div style="display:flex; width:42%; align-items: center; ">
+                
+                <a href="https://github.com/hongdul/sparta"><img style="width:200px; height:200px;" src="https://velog.velcdn.com/images/kkw0426/post/109b49bb-4661-4b23-9334-4345dee9af6d/image.png"></a>
+                <a href="https://www.instagram.com/_kunw/"><img style="width:200px; height:200px;" src="https://velog.velcdn.com/images/kkw0426/post/50069820-2617-4bc3-83ef-63634b3e8842/image.jpeg"></a>
+                <a href="https://velog.io/@kkw0426"><img style="width:150px; height:150px; margin-left:23px;" src="https://velog.velcdn.com/images/kkw0426/post/31ed1e7c-0610-4286-9539-8353c691b7b0/image.png"></a>
+            </div>
+        </section>
+
+    </div>
+
+    <div style="position: absolute; right: 80px; bottom: 50px;">
+        <a href="https://jeongminhan23.github.io/team300/">
+            <img style="width: 50px; height: 50px;"
+                src="https://velog.velcdn.com/images/varjm/post/0302b9a2-77fb-4edd-9309-eb492f60b3f9/image.png">
+        </a>
+    </div>
+</body>
+
+</html>
